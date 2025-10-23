@@ -1,5 +1,5 @@
 {
-    "name": "iot_simulator",
+    "name": "iot-simulator",
     "description": "IoT network simulator to detect cyber attacks",
     "version": "1.0.3",
     "author": "Alejandro Diez Bermejo",
@@ -8,7 +8,7 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve --no-hmr",
-        "build": "ng build --configuration production --base-href https://alejadiez.github.io/iot_attack_detection/",
+        "build": "ng build --configuration production --base-href https://adbermejo-ubu.github.io/iot-simulator/",
         "watch": "ng build --watch --configuration development",
         "test": "ng test"
     },

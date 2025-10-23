@@ -1,39 +1,39 @@
 # IoT Simulator
 
-Este directorio contiene el proyecto del Simulador IoT, que se encarga de emular el comportamiento de una red de dispositivos IoT para la detección de ataques mediante inteligencia artificial.
+This repository contains the IoT Simulator project, which emulates the behavior of an IoT device network for attack detection using artificial intelligence.
 
-## Requisitos
+## Requirements
 
-Para poder ejecutar el simulador, es necesario tener al menos Node.js 18.19.1 o superior y angular 19.0.0 o superior instalados en tu sistema.
+To run the simulator, you need to have at least Node.js 18.19.1 or higher and Angular 20.0.0 or higher installed on your system.
 
-Puedes instalar angular CLI globalmente utilizando el siguiente comando:
+You can install Angular CLI globally using the following command:
 
 ```bash
 npm install -g @angular/cli
 ```
 
-Para instalar las dependencias necesarias del proyecto, ejecuta:
+To install the necessary project dependencies, run:
 
 ```bash
 npm install
 ```
 
-## Ejecución
+Running the Simulator
 
-Para ejecutar el simulador, utiliza el siguiente comando:
+To run the simulator, use the following command:
 
 ```bash
 npm run start
 ```
 
-Esto iniciará el servidor de desarrollo y podrás acceder al simulador en tu navegador web en la dirección `http://localhost:4200`.
+This will start the development server, and you can access the simulator in your web browser at `http://localhost:4200`.
 
-## Construcción
+## Building for Production
 
-Si deseas construir el proyecto para producción, puedes utilizar el siguiente comando:
+If you want to build the project for production, you can use the following command:
 
 ```bash
 npm run build
 ```
 
-Esto generará los archivos de producción en el directorio `dist/` del proyecto, que podrás desplegar en un servidor web. Es necesario que cambies la URL base del servidor en los scripts del archivo `package.json` antes de construir el proyecto, para que apunte a la dirección correcta del servidor donde se desplegará el simulador.
+This will generate the production files in the `dist/` directory of the project, which can be deployed to a web server. It is necessary to update the server base URL in the scripts of the `package.json` file before building the project so that it points to the correct server address where the simulator will be deployed.

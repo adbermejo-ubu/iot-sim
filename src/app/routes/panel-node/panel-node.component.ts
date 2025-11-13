@@ -7,9 +7,9 @@ import {
     InputSignal,
 } from "@angular/core";
 import { RouterModule, RouterOutlet } from "@angular/router";
-import { HlmButtonImports } from "@components/ui/ui-button-helm/src";
-import { HlmCard, HlmCardImports } from "@components/ui/ui-card-helm/src";
-import { HlmDialogClose } from "@components/ui/ui-dialog-helm/src";
+import { HlmButtonImports } from "@spartan-ng/helm/button";
+import { HlmCard, HlmCardImports } from "@spartan-ng/helm/card";
+import { HlmDialogClose } from "@spartan-ng/helm/dialog";
 import { Node, NodeType } from "@models/node";
 import { NgIcon, provideIcons } from "@ng-icons/core";
 import { lucideGhost, lucideX } from "@ng-icons/lucide";

@@ -27,7 +27,7 @@
     <router-outlet #outlet="outlet" />
 </div>
 <hlm-toaster richColors theme="system" />
-<app-canvas #canvas [brnCtxMenuTriggerFor]="canvasContextMenu">
+<app-canvas #canvas [brnCtxMenuTriggerFor]="canvasContextMenu" align="start">
     @for (node of nodes; track node.mac) {
         <app-node
             [node]="node"

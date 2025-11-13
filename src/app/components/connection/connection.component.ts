@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component, inject, input, InputSignal } from "@angular/core";
-import { HlmDialogService } from "@components/ui/ui-dialog-helm/src";
+import { HlmDialogService } from "@spartan-ng/helm/dialog";
 import { Connection, ConnectionStatus } from "@models/connection";
 import { Position } from "@models/position";
 import { EditConnectionDialogComponent } from "@routes/dialogs/edit-connection-dialog.component";

@@ -7,18 +7,24 @@ import {
     output,
     OutputEmitterRef,
 } from "@angular/core";
-import { HlmMenuImports } from "@components/ui/ui-menu-helm/src";
+import { HlmMenuImports } from "@spartan-ng/helm/menu";
 import { TranslateModule } from "@ngx-translate/core";
 import { ConfigService } from "@services/config.service";
 import { NetworkService } from "@services/network.service";
 import { StateService } from "@services/state.service";
 import { BrnMenuImports } from "@spartan-ng/brain/menu";
 import { name, version } from "../../../../package.json";
+import { HlmKbdImports } from "@components/ui/kbd/src";
 
 @Component({
     selector: "app-menu-bar",
-    imports: [CommonModule, TranslateModule, BrnMenuImports, HlmMenuImports],
+    imports: [CommonModule, TranslateModule, BrnMenuImports, HlmMenuImports, HlmKbdImports],
     templateUrl: "menu-bar.component.html",
+    styles: `
+        hlm-menu-group > button, hlm-sub-menu > button {
+            text-align: left;
+        }
+    `
 })
 export class MenuBarComponent {
     public readonly config: ConfigService = inject(ConfigService);
@@ -139,7 +145,31 @@ export class MenuBarComponent {
 
     protected handleOnSourceCode() {
         window.open(
-            "https://github.com/AlejaDiez/iot_attack_detection",
+            "https://github.com/adbermejo-ubu/iot-sim",
+            "_blank",
+            "noopener noreferrer",
+        );
+    }
+
+    protected handleOnLayoutExamples() {
+        window.open(
+            "https://github.com/adbermejo-ubu/iot-sim/tree/docs/layouts",
+            "_blank",
+            "noopener noreferrer",
+        );
+    }
+
+    protected handleOnLibraryExamples() {
+        window.open(
+            "https://github.com/adbermejo-ubu/iot-sim/tree/docs/libs",
+            "_blank",
+            "noopener noreferrer",
+        );
+    }
+
+    protected handleOnModelsExamples() {
+        window.open(
+            "https://github.com/adbermejo-ubu/iot-sim/tree/docs/models",
             "_blank",
             "noopener noreferrer",
         );

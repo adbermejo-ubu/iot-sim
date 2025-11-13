@@ -1,8 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { Component, inject } from "@angular/core";
-import { HlmDialogImports } from "@components/ui/ui-dialog-helm/src";
-import { HlmSelectImports } from "@components/ui/ui-select-helm/src";
-import { HlmTooltipImports } from "@components/ui/ui-tooltip-helm/src";
+import { HlmDialogImports } from "@spartan-ng/helm/dialog";
+import { HlmSelectImports } from "@spartan-ng/helm/select";
+import { HlmTooltipImports } from "@spartan-ng/helm/tooltip";
 import { TranslateModule } from "@ngx-translate/core";
 import { ConfigService } from "@services/config.service";
 import { BrnDialogRef, injectBrnDialogContext } from "@spartan-ng/brain/dialog";

@@ -6,7 +6,7 @@
             [placeholder]="'SELECT_ATTACK' | translate"
             class="mt-2! inline-block w-full">
             <hlm-select-trigger class="w-full">
-                <hlm-select-value />
+                <hlm-select-value class="block" />
             </hlm-select-trigger>
             <hlm-select-content>
                 @for (item of attacks; track $index) {
@@ -33,7 +33,7 @@
             [multiple]="multipleTargets()"
             class="mt-2! inline-block w-full">
             <hlm-select-trigger class="w-full">
-                <hlm-select-value />
+                <hlm-select-value class="block" />
             </hlm-select-trigger>
             <hlm-select-content>
                 @for (item of connectedNodes; track $index) {

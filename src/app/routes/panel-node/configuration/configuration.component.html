@@ -25,7 +25,7 @@
         [disabled]="NodeType.getTypes(node().type).length <= 1"
         class="mt-2! inline-block w-full">
         <hlm-select-trigger class="w-full">
-            <hlm-select-value>
+            <hlm-select-value class="block">
                 <ng-container *brnSelectValue="let item">
                     {{ NodeType.toString(item) | translate }}
                 </ng-container>

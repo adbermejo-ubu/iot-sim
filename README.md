@@ -1,6 +1,6 @@
-# IoT Simulator
+# IoT-Sim
 
-This repository contains the IoT Simulator project, which emulates the behavior of an IoT device network for attack detection using artificial intelligence.
+This repository contains the IoT-Sim project, which emulates the behavior of an IoT device network for attack detection using artificial intelligence.
 
 ## Requirements
 

@@ -9,7 +9,7 @@ import {
     Signal,
 } from "@angular/core";
 import { Router, RouterModule } from "@angular/router";
-import { HlmCardImports } from "@components/ui/ui-card-helm/src";
+import { HlmCardImports } from "@spartan-ng/helm/card";
 import { Node, NodeType } from "@models/node";
 import { NgIcon, provideIcons } from "@ng-icons/core";
 import {
@@ -51,13 +51,13 @@ export class NodeComponent {
     protected dragging: boolean = false;
 
     @HostListener("mousedown", ["$event"])
-    private _mouseDown(event: MouseEvent): void {
+    mouseDown(event: MouseEvent): void {
         event.preventDefault();
         if (event.button === 0) this.clicked = true;
     }
 
     @HostListener("document:mousemove", ["$event"])
-    private _mouseMove(event: MouseEvent): void {
+    mouseMove(event: MouseEvent): void {
         event.preventDefault();
         if (
             this.clicked &&
@@ -77,7 +77,7 @@ export class NodeComponent {
     }
 
     @HostListener("document:mouseup", ["$event"])
-    private _mouseUp(event: MouseEvent): void {
+    mouseUp(event: MouseEvent): void {
         event.preventDefault();
         if (this.clicked) {
             if (this.focused()) this.router.navigate([""]);
@@ -101,7 +101,7 @@ export class NodeComponent {
 
     @HostListener("document:keydown.delete", ["$event"])
     @HostListener("document:keydown.meta.backspace", ["$event"])
-    private _supr(event: KeyboardEvent): void {
+    supr(event: Event): void {
         event.preventDefault();
         if (this.focused()) this.network.deleteNode(this.node().mac);
     }

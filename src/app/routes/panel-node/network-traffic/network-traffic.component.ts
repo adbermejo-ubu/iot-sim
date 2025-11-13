@@ -13,14 +13,14 @@ import {
     SimpleChanges,
 } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { HlmButtonImports } from "@components/ui/ui-button-helm/src";
-import { HlmDialogService } from "@components/ui/ui-dialog-helm/src";
-import { HlmInputImports } from "@components/ui/ui-input-helm/src";
-import { HlmLabelImports } from "@components/ui/ui-label-helm/src";
-import { HlmMenuSeparator } from "@components/ui/ui-menu-helm/src";
-import { HlmSelectImports } from "@components/ui/ui-select-helm/src";
-import { HlmTableImports } from "@components/ui/ui-table-helm/src";
-import { HlmTabsImports } from "@components/ui/ui-tabs-helm/src";
+import { HlmButtonImports } from "@spartan-ng/helm/button";
+import { HlmDialogService } from "@spartan-ng/helm/dialog";
+import { HlmInputImports } from "@spartan-ng/helm/input";
+import { HlmLabelImports } from "@spartan-ng/helm/label";
+import { HlmMenuSeparator } from "@spartan-ng/helm/menu";
+import { HlmSelectImports } from "@spartan-ng/helm/select";
+import { HlmTableImports } from "@spartan-ng/helm/table";
+import { HlmTabsImports } from "@spartan-ng/helm/tabs";
 import { Device } from "@models/device";
 import { Command } from "@models/flow-generator";
 import { Node, NodeType } from "@models/node";

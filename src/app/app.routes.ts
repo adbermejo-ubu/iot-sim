@@ -11,20 +11,20 @@ import { getNodeResolver } from "./resolvers/get-node.resolver";
 export const routes: Routes = [
     {
         path: "",
-        title: "IoT Simulator",
+        title: "IoT-Sim",
         component: BlankComponent,
     },
     {
         path: ":mac",
         canActivate: [nodeExistsGuard],
         resolve: { node: getNodeResolver },
-        title: "Dispositivo",
+        title: "Device",
         component: PanelNodeComponent,
         children: [
             {
                 path: "network-traffic",
                 resolve: { node: getNodeResolver },
-                title: "Tráfico de red",
+                title: "Network Traffic",
                 component: NetworkTrafficComponent,
             },
             {
@@ -37,7 +37,7 @@ export const routes: Routes = [
             {
                 path: "configuration",
                 resolve: { node: getNodeResolver },
-                title: "Configuración",
+                title: "Configuration",
                 component: ConfigurationComponent,
             },
         ],

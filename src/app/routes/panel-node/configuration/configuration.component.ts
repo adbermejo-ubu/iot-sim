@@ -1,11 +1,11 @@
 import { CommonModule } from "@angular/common";
 import { Component, inject, input, InputSignal } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { HlmButtonImports } from "@components/ui/ui-button-helm/src";
-import { HlmInputImports } from "@components/ui/ui-input-helm/src";
-import { HlmLabelImports } from "@components/ui/ui-label-helm/src";
-import { HlmSelectImports } from "@components/ui/ui-select-helm/src";
-import { HlmSwitchImports } from "@components/ui/ui-switch-helm/src";
+import { HlmButtonImports } from "@spartan-ng/helm/button";
+import { HlmInputImports } from "@spartan-ng/helm/input";
+import { HlmLabelImports } from "@spartan-ng/helm/label";
+import { HlmSelectImports } from "@spartan-ng/helm/select";
+import { HlmSwitchImports } from "@spartan-ng/helm/switch";
 import { Node, NodeType } from "@models/node";
 import { TranslateModule } from "@ngx-translate/core";
 import { ConfigService } from "@services/config.service";

@@ -1,17 +1,17 @@
 <hlm-menu-bar class="w-fit">
-    <button hlmMenuBarItem [brnMenuTriggerFor]="file">
+    <button hlmMenuBarItem [brnMenuTriggerFor]="file" align="start">
         {{ "FILE" | translate }}
     </button>
-    <button hlmMenuBarItem [brnMenuTriggerFor]="edit">
+    <button hlmMenuBarItem [brnMenuTriggerFor]="edit" align="start">
         {{ "EDIT" | translate }}
     </button>
-    <button hlmMenuBarItem [brnMenuTriggerFor]="insert">
+    <button hlmMenuBarItem [brnMenuTriggerFor]="insert" align="start">
         {{ "INSERT" | translate }}
     </button>
-    <button hlmMenuBarItem [brnMenuTriggerFor]="view">
+    <button hlmMenuBarItem [brnMenuTriggerFor]="view" align="start">
         {{ "VIEW" | translate }}
     </button>
-    <button hlmMenuBarItem [brnMenuTriggerFor]="help">
+    <button hlmMenuBarItem [brnMenuTriggerFor]="help" align="start">
         {{ "HELP" | translate }}
     </button>
 </hlm-menu-bar>
@@ -31,7 +31,7 @@
         <hlm-menu-separator />
         <hlm-menu-group>
             @if (externalLibrary()) {
-                <button hlmMenuItem [brnMenuTriggerFor]="librarySubmenu">
+                <button hlmMenuItem [brnMenuTriggerFor]="librarySubmenu" align="start" side="right">
                     {{ "EXTERNAL_LIBRARY" | translate }}
                     <hlm-menu-item-sub-indicator />
                 </button>
@@ -41,7 +41,7 @@
                 </button>
             }
             @if (models()) {
-                <button hlmMenuItem [brnMenuTriggerFor]="modelsSubmenu">
+                <button hlmMenuItem [brnMenuTriggerFor]="modelsSubmenu" align="start" side="right">
                     {{ "MODELS" | translate }}
                     <hlm-menu-item-sub-indicator />
                 </button>
@@ -118,7 +118,7 @@
 
 <ng-template #view>
     <hlm-menu variant="menubar" class="w-48">
-        <button inset hlmMenuItem [brnMenuTriggerFor]="languageSubmenu">
+        <button inset hlmMenuItem [brnMenuTriggerFor]="languageSubmenu" align="start" side="right">
             {{ "LANGUAGE" | translate }}
             <hlm-menu-item-sub-indicator />
         </button>
@@ -211,6 +211,18 @@
 
 <ng-template #help>
     <hlm-menu variant="menubar" class="w-48">
+        <hlm-menu-group>
+            <button hlmMenuItem (click)="handleOnLayoutExamples()">
+                {{ "LAYOUT_EXAMPLES" | translate }}
+            </button>
+            <button hlmMenuItem (click)="handleOnLibraryExamples()">
+                {{ "LIBRARY_EXAMPLES" | translate }}
+            </button>
+            <button hlmMenuItem (click)="handleOnModelsExamples()">
+                {{ "MODELS_EXAMPLES" | translate }}
+            </button>
+        </hlm-menu-group>
+        <hlm-menu-separator />
         <hlm-menu-group>
             <button hlmMenuItem (click)="handleOnSourceCode()">
                 {{ "SOURCE_CODE" | translate }}

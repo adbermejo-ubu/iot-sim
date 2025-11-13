@@ -8,11 +8,11 @@ import {
     Signal,
 } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { HlmButtonImports } from "@components/ui/ui-button-helm/src";
-import { HlmDialogImports } from "@components/ui/ui-dialog-helm/src";
-import { HlmInputImports } from "@components/ui/ui-input-helm/src";
-import { HlmLabelImports } from "@components/ui/ui-label-helm/src";
-import { HlmSelectImports } from "@components/ui/ui-select-helm/src";
+import { HlmButtonImports } from "@spartan-ng/helm/button";
+import { HlmDialogImports } from "@spartan-ng/helm/dialog";
+import { HlmInputImports } from "@spartan-ng/helm/input";
+import { HlmLabelImports } from "@spartan-ng/helm/label";
+import { HlmSelectImports } from "@spartan-ng/helm/select";
 import { NodeType } from "@models/node";
 import { TranslateModule } from "@ngx-translate/core";
 import { BrnDialogRef, injectBrnDialogContext } from "@spartan-ng/brain/dialog";
@@ -57,7 +57,7 @@ export interface AddNodeDialogContext {
                     [disabled]="types().length === 1"
                     class="col-span-3 inline-block">
                     <hlm-select-trigger class="w-full">
-                        <hlm-select-value />
+                        <hlm-select-value class="block" />
                     </hlm-select-trigger>
                     <hlm-select-content>
                         @for (item of types(); track $index) {

@@ -13,10 +13,10 @@ import {
     SimpleChanges,
 } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { HlmButtonImports } from "@components/ui/ui-button-helm/src";
-import { HlmLabelImports } from "@components/ui/ui-label-helm/src";
-import { HlmMenuSeparator } from "@components/ui/ui-menu-helm/src";
-import { HlmSelectImports } from "@components/ui/ui-select-helm/src";
+import { HlmButtonImports } from "@spartan-ng/helm/button";
+import { HlmLabelImports } from "@spartan-ng/helm/label";
+import { HlmMenuSeparator } from "@spartan-ng/helm/menu";
+import { HlmSelectImports } from "@spartan-ng/helm/select";
 import { Device } from "@models/device";
 import { Node } from "@models/node";
 import { Attack, PhantomAttacker } from "@models/phantom-attacker";

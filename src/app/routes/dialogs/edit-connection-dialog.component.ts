@@ -1,11 +1,11 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { HlmDialogImports } from "@components/ui/ui-dialog-helm/src";
-import { HlmInputImports } from "@components/ui/ui-input-helm/src";
-import { HlmLabelImports } from "@components/ui/ui-label-helm/src";
-import { HlmSelectImports } from "@components/ui/ui-select-helm/src";
-import { HlmSwitchImports } from "@components/ui/ui-switch-helm/src";
+import { HlmDialogImports } from "@spartan-ng/helm/dialog";
+import { HlmInputImports } from "@spartan-ng/helm/input";
+import { HlmLabelImports } from "@spartan-ng/helm/label";
+import { HlmSelectImports } from "@spartan-ng/helm/select";
+import { HlmSwitchImports } from "@spartan-ng/helm/switch";
 import { Connection } from "@models/connection";
 import { TranslateModule } from "@ngx-translate/core";
 import { injectBrnDialogContext } from "@spartan-ng/brain/dialog";
@@ -93,7 +93,7 @@ export interface EditConnectionContext {
                         [placeholder]="'SELECT_MODEL' | translate"
                         class="col-span-3 inline-block w-full">
                         <hlm-select-trigger class="w-full">
-                            <hlm-select-value />
+                            <hlm-select-value class="block" />
                         </hlm-select-trigger>
                         <hlm-select-content>
                             @for (

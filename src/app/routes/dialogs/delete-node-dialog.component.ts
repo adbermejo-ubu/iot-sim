@@ -1,8 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { Component, computed, inject, Signal } from "@angular/core";
-import { HlmButtonImports } from "@components/ui/ui-button-helm/src";
-import { HlmDialogImports } from "@components/ui/ui-dialog-helm/src";
-import { HlmSelectImports } from "@components/ui/ui-select-helm/src";
+import { HlmButtonImports } from "@spartan-ng/helm/button";
+import { HlmDialogImports } from "@spartan-ng/helm/dialog";
+import { HlmSelectImports } from "@spartan-ng/helm/select";
 import { Node } from "@models/node";
 import { TranslateModule } from "@ngx-translate/core";
 import { BrnDialogRef, injectBrnDialogContext } from "@spartan-ng/brain/dialog";

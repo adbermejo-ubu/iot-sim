@@ -9,7 +9,6 @@ import {
     Signal,
 } from "@angular/core";
 import { Router, RouterModule } from "@angular/router";
-import { HlmCardImports } from "@spartan-ng/helm/card";
 import { Node, NodeType } from "@models/node";
 import { NgIcon, provideIcons } from "@ng-icons/core";
 import {
@@ -21,6 +20,7 @@ import {
 } from "@ng-icons/lucide";
 import { ConfigService } from "@services/config.service";
 import { NetworkService } from "@services/network.service";
+import { HlmCardImports } from "@spartan-ng/helm/card";
 
 @Component({
     selector: "app-node",

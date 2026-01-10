@@ -13,10 +13,7 @@ import {
     SimpleChanges,
 } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { HlmButtonImports } from "@spartan-ng/helm/button";
-import { HlmLabelImports } from "@spartan-ng/helm/label";
-import { HlmMenuSeparator } from "@spartan-ng/helm/menu";
-import { HlmSelectImports } from "@spartan-ng/helm/select";
+import { HlmDropdownMenuSeparator } from "@components/ui/dropdown-menu/src";
 import { Device } from "@models/device";
 import { Node } from "@models/node";
 import { Attack, PhantomAttacker } from "@models/phantom-attacker";
@@ -25,6 +22,9 @@ import { lucideUnplug } from "@ng-icons/lucide";
 import { TranslateModule } from "@ngx-translate/core";
 import { NetworkService } from "@services/network.service";
 import { BrnSelectImports } from "@spartan-ng/brain/select";
+import { HlmButtonImports } from "@spartan-ng/helm/button";
+import { HlmLabelImports } from "@spartan-ng/helm/label";
+import { HlmSelectImports } from "@spartan-ng/helm/select";
 
 @Component({
     imports: [
@@ -34,7 +34,7 @@ import { BrnSelectImports } from "@spartan-ng/brain/select";
         BrnSelectImports,
         HlmButtonImports,
         HlmLabelImports,
-        HlmMenuSeparator,
+        HlmDropdownMenuSeparator,
         HlmSelectImports,
         NgIcon,
     ],

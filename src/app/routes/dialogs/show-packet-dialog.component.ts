@@ -1,13 +1,13 @@
 import { CommonModule } from "@angular/common";
 import { Component, inject } from "@angular/core";
-import { HlmDialogImports } from "@spartan-ng/helm/dialog";
-import { HlmSelectImports } from "@spartan-ng/helm/select";
-import { HlmTooltipImports } from "@spartan-ng/helm/tooltip";
 import { TranslateModule } from "@ngx-translate/core";
 import { ConfigService } from "@services/config.service";
 import { BrnDialogRef, injectBrnDialogContext } from "@spartan-ng/brain/dialog";
 import { BrnSelectImports } from "@spartan-ng/brain/select";
 import { BrnTooltipImports } from "@spartan-ng/brain/tooltip";
+import { HlmDialogImports } from "@spartan-ng/helm/dialog";
+import { HlmSelectImports } from "@spartan-ng/helm/select";
+import { HlmTooltipImports } from "@spartan-ng/helm/tooltip";
 
 export interface ShowPacketDialogContext {
     packet: any;
@@ -32,7 +32,7 @@ export interface ShowPacketDialogContext {
             <div class="grid grid-cols-4 items-center gap-4">
                 <label
                     hlmLabel
-                    class="items-center text-right text-sm font-medium text-muted-foreground"
+                    class="text-muted-foreground items-center text-right text-sm font-medium"
                     >{{ "PACKET_SRC_IP" | translate }}</label
                 >
                 <span class="col-span-3 overflow-hidden text-ellipsis">{{
@@ -42,7 +42,7 @@ export interface ShowPacketDialogContext {
             <div class="grid grid-cols-4 items-center gap-4">
                 <label
                     hlmLabel
-                    class="items-center text-right text-sm font-medium text-muted-foreground"
+                    class="text-muted-foreground items-center text-right text-sm font-medium"
                     >{{ "PACKET_DST_IP" | translate }}</label
                 >
                 <span class="col-span-3 overflow-hidden text-ellipsis">{{
@@ -52,7 +52,7 @@ export interface ShowPacketDialogContext {
             <div class="grid grid-cols-4 items-center gap-4">
                 <label
                     hlmLabel
-                    class="items-center text-right text-sm font-medium text-muted-foreground"
+                    class="text-muted-foreground items-center text-right text-sm font-medium"
                     >{{ "PACKET_SRC_PORT" | translate }}</label
                 >
                 <span class="col-span-3 overflow-hidden text-ellipsis">{{
@@ -62,7 +62,7 @@ export interface ShowPacketDialogContext {
             <div class="grid grid-cols-4 items-center gap-4">
                 <label
                     hlmLabel
-                    class="items-center text-right text-sm font-medium text-muted-foreground"
+                    class="text-muted-foreground items-center text-right text-sm font-medium"
                     >{{ "PACKET_DST_PORT" | translate }}</label
                 >
                 <span class="col-span-3 overflow-hidden text-ellipsis">{{
@@ -72,7 +72,7 @@ export interface ShowPacketDialogContext {
             <div class="grid grid-cols-4 items-center gap-4">
                 <label
                     hlmLabel
-                    class="items-center text-right text-sm font-medium text-muted-foreground"
+                    class="text-muted-foreground items-center text-right text-sm font-medium"
                     >{{ "PACKET_TRANSPORT_PROTOCOL" | translate }}</label
                 >
                 <span class="col-span-3 overflow-hidden text-ellipsis">{{
@@ -82,7 +82,7 @@ export interface ShowPacketDialogContext {
             <div class="grid grid-cols-4 items-center gap-4">
                 <label
                     hlmLabel
-                    class="items-center text-right text-sm font-medium text-muted-foreground"
+                    class="text-muted-foreground items-center text-right text-sm font-medium"
                     >{{ "PACKET_APPLICATION_PROTOCOL" | translate }}</label
                 >
                 <span class="col-span-3 overflow-hidden text-ellipsis">{{
@@ -92,7 +92,7 @@ export interface ShowPacketDialogContext {
             <div class="grid grid-cols-4 items-center gap-4">
                 <label
                     hlmLabel
-                    class="items-center text-right text-sm font-medium text-muted-foreground"
+                    class="text-muted-foreground items-center text-right text-sm font-medium"
                     >{{ "PACKET_PAYLOAD" | translate }}</label
                 >
                 <hlm-tooltip>
@@ -104,7 +104,7 @@ export interface ShowPacketDialogContext {
                     </span>
                     <span
                         *brnTooltipContent
-                        class="wrap-break-word overflow-hidden whitespace-normal break-all">
+                        class="overflow-hidden wrap-break-word break-all whitespace-normal">
                         {{ context.packet.payload }}
                     </span>
                 </hlm-tooltip>
@@ -112,7 +112,7 @@ export interface ShowPacketDialogContext {
             <div class="grid grid-cols-4 items-center gap-4">
                 <label
                     hlmLabel
-                    class="items-center text-right text-sm font-medium text-muted-foreground"
+                    class="text-muted-foreground items-center text-right text-sm font-medium"
                     >{{ "PACKET_TOTAL_BYTES" | translate }}</label
                 >
                 <span class="col-span-3 overflow-hidden text-ellipsis">{{
@@ -122,7 +122,7 @@ export interface ShowPacketDialogContext {
             <div class="grid grid-cols-4 items-center gap-4">
                 <label
                     hlmLabel
-                    class="items-center text-right text-sm font-medium text-muted-foreground"
+                    class="text-muted-foreground items-center text-right text-sm font-medium"
                     >{{ "PACKET_HEADER_SIZE" | translate }}</label
                 >
                 <span class="col-span-3 overflow-hidden text-ellipsis">{{
@@ -132,7 +132,7 @@ export interface ShowPacketDialogContext {
             <div class="grid grid-cols-4 items-center gap-4">
                 <label
                     hlmLabel
-                    class="items-center text-right text-sm font-medium text-muted-foreground"
+                    class="text-muted-foreground items-center text-right text-sm font-medium"
                     >{{ "PACKET_PAYLOAD_SIZE" | translate }}</label
                 >
                 <span class="col-span-3 overflow-hidden text-ellipsis">{{
@@ -142,7 +142,7 @@ export interface ShowPacketDialogContext {
             <div class="grid grid-cols-4 items-center gap-4">
                 <label
                     hlmLabel
-                    class="items-center text-right text-sm font-medium text-muted-foreground"
+                    class="text-muted-foreground items-center text-right text-sm font-medium"
                     >{{ "PACKET_TIMESTAMP" | translate }}</label
                 >
                 <span class="col-span-3 overflow-hidden text-ellipsis">{{
@@ -153,7 +153,7 @@ export interface ShowPacketDialogContext {
             <div class="grid grid-cols-4 items-center gap-4">
                 <label
                     hlmLabel
-                    class="items-center text-right text-sm font-medium text-muted-foreground"
+                    class="text-muted-foreground items-center text-right text-sm font-medium"
                     >{{ "PACKET_TTL" | translate }}</label
                 >
                 <span class="col-span-3 overflow-hidden text-ellipsis">{{
@@ -164,7 +164,7 @@ export interface ShowPacketDialogContext {
                 <div class="grid grid-cols-4 items-center gap-4">
                     <label
                         hlmLabel
-                        class="items-center text-right text-sm font-medium text-muted-foreground"
+                        class="text-muted-foreground items-center text-right text-sm font-medium"
                         >{{ "PACKET_TYPE" | translate }}</label
                     >
                     <span class="col-span-3 overflow-hidden text-ellipsis">{{
@@ -176,7 +176,7 @@ export interface ShowPacketDialogContext {
                 <div class="grid grid-cols-4 items-center gap-4">
                     <label
                         hlmLabel
-                        class="items-center text-right text-sm font-medium text-muted-foreground"
+                        class="text-muted-foreground items-center text-right text-sm font-medium"
                         >{{ "PACKET_CODE" | translate }}</label
                     >
                     <span class="col-span-3 overflow-hidden text-ellipsis">{{
@@ -188,7 +188,7 @@ export interface ShowPacketDialogContext {
                 <div class="grid grid-cols-4 items-center gap-4">
                     <label
                         hlmLabel
-                        class="items-center text-right text-sm font-medium text-muted-foreground"
+                        class="text-muted-foreground items-center text-right text-sm font-medium"
                         >{{ "PACKET_IDENTIFIER" | translate }}</label
                     >
                     <span class="col-span-3 overflow-hidden text-ellipsis">{{
@@ -200,7 +200,7 @@ export interface ShowPacketDialogContext {
                 <div class="grid grid-cols-4 items-center gap-4">
                     <label
                         hlmLabel
-                        class="items-center text-right text-sm font-medium text-muted-foreground"
+                        class="text-muted-foreground items-center text-right text-sm font-medium"
                         >{{ "PACKET_SEQUENCE" | translate }}</label
                     >
                     <span class="col-span-3 overflow-hidden text-ellipsis">{{
@@ -212,7 +212,7 @@ export interface ShowPacketDialogContext {
                 <div class="grid grid-cols-4 items-center gap-4">
                     <label
                         hlmLabel
-                        class="items-center text-right text-sm font-medium text-muted-foreground"
+                        class="text-muted-foreground items-center text-right text-sm font-medium"
                         >{{ "PACKET_TCP_FLAGS" | translate }}</label
                     >
                     <span class="col-span-3 overflow-hidden text-ellipsis">{{
@@ -224,7 +224,7 @@ export interface ShowPacketDialogContext {
                 <div class="grid grid-cols-4 items-center gap-4">
                     <label
                         hlmLabel
-                        class="items-center text-right text-sm font-medium text-muted-foreground"
+                        class="text-muted-foreground items-center text-right text-sm font-medium"
                         >{{ "PACKET_ACK" | translate }}</label
                     >
                     <span class="col-span-3 overflow-hidden text-ellipsis">{{

@@ -7,24 +7,31 @@ import {
     output,
     OutputEmitterRef,
 } from "@angular/core";
-import { HlmMenuImports } from "@spartan-ng/helm/menu";
+import { HlmDropdownMenuImports } from "@components/ui/dropdown-menu/src";
+import { HlmKbdImports } from "@components/ui/kbd/src";
+import { HlmMenubarImports } from "@components/ui/menubar/src";
 import { TranslateModule } from "@ngx-translate/core";
 import { ConfigService } from "@services/config.service";
 import { NetworkService } from "@services/network.service";
 import { StateService } from "@services/state.service";
-import { BrnMenuImports } from "@spartan-ng/brain/menu";
 import { name, version } from "../../../../package.json";
-import { HlmKbdImports } from "@components/ui/kbd/src";
 
 @Component({
     selector: "app-menu-bar",
-    imports: [CommonModule, TranslateModule, BrnMenuImports, HlmMenuImports, HlmKbdImports],
+    imports: [
+        CommonModule,
+        TranslateModule,
+        HlmMenubarImports,
+        HlmDropdownMenuImports,
+        HlmKbdImports,
+    ],
     templateUrl: "menu-bar.component.html",
     styles: `
-        hlm-menu-group > button, hlm-sub-menu > button {
+        hlm-dropdown-menu-group > button,
+        hlm-dropdown-menu-sub > button {
             text-align: left;
         }
-    `
+    `,
 })
 export class MenuBarComponent {
     public readonly config: ConfigService = inject(ConfigService);
@@ -151,27 +158,23 @@ export class MenuBarComponent {
         );
     }
 
-    protected handleOnLayoutExamples() {
+    protected handleOnDocumentation() {
         window.open(
-            "https://github.com/adbermejo-ubu/iot-sim/tree/docs/layouts",
+            "https://github.com/adbermejo-ubu/iot-sim/wiki",
             "_blank",
             "noopener noreferrer",
         );
+    }
+
+    protected handleOnLayoutExamples() {
+        window.open("/iot-sim/resources/topologies", "_blank", "noopener noreferrer");
     }
 
     protected handleOnLibraryExamples() {
-        window.open(
-            "https://github.com/adbermejo-ubu/iot-sim/tree/docs/libs",
-            "_blank",
-            "noopener noreferrer",
-        );
+        window.open("/iot-sim/resources/libs", "_blank", "noopener noreferrer");
     }
 
     protected handleOnModelsExamples() {
-        window.open(
-            "https://github.com/adbermejo-ubu/iot-sim/tree/docs/models",
-            "_blank",
-            "noopener noreferrer",
-        );
+        window.open("/iot-sim/resources/models", "_blank", "noopener noreferrer");
     }
 }

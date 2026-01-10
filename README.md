@@ -1,7 +1,7 @@
 # IoT-Sim: An Interactive Platform for Designing and Securing Smart Device Networks
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-![Version](https://img.shields.io/badge/Version-v1.0.4-blue.svg)
+![Version](https://img.shields.io/badge/Version-v1.0.5-blue.svg)
 
 IoT-Sim is a lightweight, modular, and open-source tool designed to create, configure, and test attack detection models for Internet of Things (IoT) networks. It provides an interactive, client-side simulation environment that runs entirely in your browser, with no dedicated backend server required.
 
@@ -29,8 +29,8 @@ You can access a running instance of the simulator here:
 
 To run the simulator locally, you will need the following software installed:
 
-- **Node.js:** `v18.19.1` or higher
-- **Angular CLI:** `v20.0.0` or higher
+- **Node.js:** `v20.19.0` or higher
+- **Angular CLI:** `v21.0.0` or higher
 
 You can install the Angular CLI globally using npm:
 

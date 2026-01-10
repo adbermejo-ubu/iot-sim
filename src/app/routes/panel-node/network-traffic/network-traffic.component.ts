@@ -13,14 +13,7 @@ import {
     SimpleChanges,
 } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { HlmButtonImports } from "@spartan-ng/helm/button";
-import { HlmDialogService } from "@spartan-ng/helm/dialog";
-import { HlmInputImports } from "@spartan-ng/helm/input";
-import { HlmLabelImports } from "@spartan-ng/helm/label";
-import { HlmMenuSeparator } from "@spartan-ng/helm/menu";
-import { HlmSelectImports } from "@spartan-ng/helm/select";
-import { HlmTableImports } from "@spartan-ng/helm/table";
-import { HlmTabsImports } from "@spartan-ng/helm/tabs";
+import { HlmDropdownMenuSeparator } from "@components/ui/dropdown-menu/src";
 import { Device } from "@models/device";
 import { Command } from "@models/flow-generator";
 import { Node, NodeType } from "@models/node";
@@ -38,6 +31,13 @@ import { TranslateModule } from "@ngx-translate/core";
 import { ShowPacketDialogComponent } from "@routes/dialogs/show-packet-dialog.component";
 import { NetworkService } from "@services/network.service";
 import { BrnSelectImports } from "@spartan-ng/brain/select";
+import { HlmButtonImports } from "@spartan-ng/helm/button";
+import { HlmDialogService } from "@spartan-ng/helm/dialog";
+import { HlmInputImports } from "@spartan-ng/helm/input";
+import { HlmLabelImports } from "@spartan-ng/helm/label";
+import { HlmSelectImports } from "@spartan-ng/helm/select";
+import { HlmTableImports } from "@spartan-ng/helm/table";
+import { HlmTabsImports } from "@spartan-ng/helm/tabs";
 
 @Component({
     imports: [
@@ -48,7 +48,7 @@ import { BrnSelectImports } from "@spartan-ng/brain/select";
         HlmButtonImports,
         HlmInputImports,
         HlmLabelImports,
-        HlmMenuSeparator,
+        HlmDropdownMenuSeparator,
         HlmSelectImports,
         HlmTableImports,
         HlmTabsImports,

@@ -1,36 +1,33 @@
-import { Directive, computed, input } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { hlm } from '@spartan-ng/helm/utils';
-import type { ClassValue } from 'clsx';
+import { Directive, input } from "@angular/core";
+import { RouterLink } from "@angular/router";
+import { classes } from "@spartan-ng/helm/utils";
 
 @Directive({
-	selector: '[hlmBreadcrumbLink]',
-	hostDirectives: [
-		{
-			directive: RouterLink,
-			inputs: [
-				'target',
-				'queryParams',
-				'fragment',
-				'queryParamsHandling',
-				'state',
-				'info',
-				'relativeTo',
-				'preserveFragment',
-				'skipLocationChange',
-				'replaceUrl',
-				'routerLink: link',
-			],
-		},
-	],
-	host: {
-		'[class]': '_computedClass()',
-	},
+    selector: "[hlmBreadcrumbLink]",
+    hostDirectives: [
+        {
+            directive: RouterLink,
+            inputs: [
+                "target",
+                "queryParams",
+                "fragment",
+                "queryParamsHandling",
+                "state",
+                "info",
+                "relativeTo",
+                "preserveFragment",
+                "skipLocationChange",
+                "replaceUrl",
+                "routerLink: link",
+            ],
+        },
+    ],
 })
 export class HlmBreadcrumbLink {
-	public readonly userClass = input<ClassValue>('', { alias: 'class' });
-	/** The link to navigate to the page. */
-	public readonly link = input<RouterLink['routerLink']>();
+    constructor() {
+        classes(() => "hover:text-foreground transition-colors");
+    }
 
-	protected readonly _computedClass = computed(() => hlm('hover:text-foreground transition-colors', this.userClass()));
+    /** The link to navigate to the page. */
+    public readonly link = input<RouterLink["routerLink"]>();
 }

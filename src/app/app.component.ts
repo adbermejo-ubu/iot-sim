@@ -11,9 +11,8 @@ import { CanvasComponent } from "@components/canvas/canvas.component";
 import { ConnectionComponent } from "@components/connection/connection.component";
 import { MenuBarComponent } from "@components/menu-bar/menu-bar.component";
 import { NodeComponent } from "@components/node/node.component";
-import { HlmButtonImports } from "@spartan-ng/helm/button";
-import { HlmMenuImports } from "@spartan-ng/helm/menu";
-import { HlmToasterImports } from "@spartan-ng/helm/sonner";
+import { HlmContextMenuImports } from "@components/ui/context-menu/src";
+import { HlmDropdownMenuImports } from "@components/ui/dropdown-menu/src";
 import { Connection } from "@models/connection";
 import { Node, NodeType } from "@models/node";
 import { Router } from "@models/router";
@@ -30,7 +29,8 @@ import { LibraryService } from "@services/library.service";
 import { ModelsService } from "@services/models.service";
 import { NetworkService } from "@services/network.service";
 import { StateService } from "@services/state.service";
-import { BrnMenuImports } from "@spartan-ng/brain/menu";
+import { HlmButtonImports } from "@spartan-ng/helm/button";
+import { HlmToasterImports } from "@spartan-ng/helm/sonner";
 import { floatAnimation } from "./app.routes.transition";
 
 @Component({ template: "" })
@@ -43,8 +43,8 @@ export class BlankComponent {}
         CanvasComponent,
         ConnectionComponent,
         HlmButtonImports,
-        HlmMenuImports,
-        BrnMenuImports,
+        HlmDropdownMenuImports,
+        HlmContextMenuImports,
         HlmToasterImports,
         MenuBarComponent,
         NodeComponent,

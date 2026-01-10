@@ -2,13 +2,13 @@
     @if (node().traffic.length > 0) {
         <div
             hlmTableContainer
-            class="block max-h-64 min-h-44 overflow-auto rounded-md border border-border">
+            class="border-border block max-h-64 min-h-44 overflow-auto rounded-md border">
             <table hlmTable>
                 <thead
                     hlmTHead
-                    class="sticky top-0 bg-card shadow-[0_0_0_0.5px_hsl(var(--border))]">
+                    class="bg-card sticky top-0 shadow-[0_0_0_0.5px_hsl(var(--border))]">
                     <tr hlmTr>
-                        <th hlmTh class="w-12 font-semibold"></th>
+                        <th hlmTh class="w-10 font-semibold"></th>
                         <th hlmTh class="w-28 font-semibold">
                             {{ "SOURCE" | translate }}
                         </th>
@@ -35,19 +35,19 @@
                                         <ng-icon
                                             name="lucideReply"
                                             size="1rem"
-                                            class="text-red-600 dark:text-red-400" />
+                                            class="text-red-600! dark:text-red-400!" />
                                     }
                                     @case (item.dstIP) {
                                         <ng-icon
                                             name="lucideForward"
                                             size="1rem"
-                                            class="text-green-600 dark:text-green-400" />
+                                            class="text-green-600! dark:text-green-400!" />
                                     }
                                     @default {
                                         <ng-icon
                                             name="lucideRepeat"
                                             size="1rem"
-                                            class="text-yellow-600 dark:text-yellow-400" />
+                                            class="text-yellow-600! dark:text-yellow-400!" />
                                     }
                                 }
                             </td>
@@ -64,26 +64,28 @@
         <ng-icon
             name="lucideTrafficCone"
             size="6rem"
-            class="mb-8 mt-4 self-center text-secondary" />
+            class="text-secondary! mt-4 mb-8 self-center" />
         <p
-            class="mb-4 w-96 self-center text-center text-sm text-muted-foreground">
+            class="text-muted-foreground mb-4 w-96 self-center text-center text-sm">
             {{ "NO_TRAFFIC" | translate }}
         </p>
     }
-    <div class="flex w-[584px] flex-row items-center justify-end gap-2">
+    <div class="flex grow flex-row items-center justify-end gap-2">
         <label hlmLabel class="w-40 flex-col items-start justify-start">
             {{ "COMMAND" | translate }}
             <brn-select
                 [(ngModel)]="command"
                 [placeholder]="'SELECT_COMMAND' | translate"
-                class="mt-2! inline-block w-full">
+                scrollable="true"
+                class="inline-block w-full">
                 <hlm-select-trigger class="w-full">
                     <hlm-select-value class="block" />
                 </hlm-select-trigger>
-                <hlm-select-content>
+                <hlm-select-content class="max-h-96">
+                    <hlm-select-scroll-up />
                     @for (item of commands; track $index) {
                         @if (item === "---") {
-                            <hlm-menu-separator />
+                            <hlm-dropdown-menu-separator />
                         } @else {
                             <hlm-option [value]="item">{{
                                 item.name
@@ -94,6 +96,7 @@
                             {{ "NO_COMMANDS" | translate }}
                         </hlm-option>
                     }
+                    <hlm-select-scroll-down />
                 </hlm-select-content>
             </brn-select>
         </label>
@@ -105,14 +108,17 @@
                     (multipleTargets() ? 'TARGETS_IP' : 'TARGET_IP') | translate
                 "
                 [multiple]="multipleTargets()"
-                class="mt-2! inline-block w-full">
+                scrollable="true"
+                class="inline-block w-full">
                 <hlm-select-trigger class="w-full">
                     <hlm-select-value class="block" />
                 </hlm-select-trigger>
-                <hlm-select-content>
+                <hlm-select-content class="max-h-96">
+                    <hlm-select-scroll-up />
                     @for (item of connectedNodes; track $index) {
                         <hlm-option [value]="item.ip">{{ item.ip }}</hlm-option>
                     }
+                    <hlm-select-scroll-down />
                 </hlm-select-content>
             </brn-select>
         </label>
@@ -129,16 +135,16 @@
         <ng-icon
             name="lucideHourglass"
             size="6rem"
-            class="mb-8 mt-4 self-center text-secondary" />
-        <p class="w-96 self-center text-center text-sm text-muted-foreground">
+            class="text-secondary! mt-4 mb-8 self-center" />
+        <p class="text-muted-foreground w-96 self-center text-center text-sm">
             {{ "NO_CONNECTED_DEVICES" | translate }}
         </p>
     } @else {
         <ng-icon
             name="lucideUnplug"
             size="6rem"
-            class="mb-8 mt-4 self-center text-secondary" />
-        <p class="w-96 self-center text-center text-sm text-muted-foreground">
+            class="text-secondary! mt-4 mb-8 self-center" />
+        <p class="text-muted-foreground w-96 self-center text-center text-sm">
             {{ "NO_ROUTER" | translate }}
         </p>
         <button hlmBtn (click)="connect()" [disabled]="!canConnect">

@@ -1,23 +1,20 @@
-import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
-import { hlm } from '@spartan-ng/helm/utils';
-import type { ClassValue } from 'clsx';
-import { HlmCarousel } from './hlm-carousel';
+import { Directive, inject } from "@angular/core";
+import { classes } from "@spartan-ng/helm/utils";
+import { HlmCarousel } from "./hlm-carousel";
 
-@Component({
-	selector: 'hlm-carousel-content',
-	changeDetection: ChangeDetectionStrategy.OnPush,
-	host: {
-		'[class]': '_computedClass()',
-	},
-	template: `
-		<ng-content />
-	`,
+@Directive({
+    selector: "[hlmCarouselContent],hlm-carousel-content",
+    host: {
+        "data-slot": "carousel-content",
+    },
 })
 export class HlmCarouselContent {
-	private readonly _orientation = inject(HlmCarousel).orientation;
+    private readonly _orientation = inject(HlmCarousel).orientation;
 
-	public readonly userClass = input<ClassValue>('', { alias: 'class' });
-	protected readonly _computedClass = computed(() =>
-		hlm('flex', this._orientation() === 'horizontal' ? '-ml-4' : '-mt-4 flex-col', this.userClass()),
-	);
+    constructor() {
+        classes(() => [
+            "flex",
+            this._orientation() === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
+        ]);
+    }
 }

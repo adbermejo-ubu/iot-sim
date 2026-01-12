@@ -14,7 +14,7 @@ import { ConfigService } from "@services/config.service";
     template: `
         <div
             #frame
-            class="frame fixed left-0 top-0 h-screen w-screen cursor-default overflow-scroll">
+            class="frame fixed top-0 left-0 h-screen w-screen cursor-default overflow-scroll">
             <div
                 [ngStyle]="{
                     width: config.size() * config.zoom() + 'px',
@@ -37,6 +37,8 @@ import { ConfigService } from "@services/config.service";
         </div>
     `,
     styles: `
+        @reference "../../../styles.css";
+
         .frame {
             @apply bg-background;
 
@@ -48,7 +50,7 @@ import { ConfigService } from "@services/config.service";
         .grid-view {
             background-image: radial-gradient(
                 circle,
-                hsl(var(--border)) 1.5px,
+                var(--border) 1.5px,
                 transparent 1.5px
             );
             background-size: 20px 20px;
@@ -56,7 +58,7 @@ import { ConfigService } from "@services/config.service";
             ::ng-deep .high-contrast & {
                 background-image: radial-gradient(
                     circle,
-                    hsl(var(--muted-foreground)) 1.5px,
+                    var(--muted-foreground) 1.5px,
                     transparent 1.5px
                 );
             }

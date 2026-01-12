@@ -1,4 +1,6 @@
-<button routerLink="/" hlmDialogClose>
+<button
+    routerLink="/"
+    class="ring-offset-background absolute end-4 top-4 flex items-center justify-center rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:outline-hidden disabled:pointer-events-none [&_ng-icon]:shrink-0">
     <ng-icon name="lucideX" size="1rem" />
 </button>
 <div hlmCardHeader>
@@ -6,32 +8,32 @@
     <p hlmCardDescription>{{ node().ip }}</p>
 </div>
 <div
-    class="mx-6 mb-4 mt-6 inline-flex h-10 items-center justify-center space-x-1 rounded-md bg-muted p-1 text-muted-foreground">
+    class="bg-muted text-muted-foreground mx-6 mt-6 mb-4 inline-flex h-10 items-center justify-center space-x-1 rounded-md p-1">
     <button
         routerLink="network-traffic"
-        class="inline-flex flex-1 items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-        routerLinkActive="bg-background text-foreground shadow-sm">
+        class="ring-offset-background focus-visible:ring-ring inline-flex flex-1 items-center justify-center rounded-sm px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden"
+        routerLinkActive="bg-background text-foreground shadow-xs">
         {{ "NETWORK_TRAFFIC" | translate }}
     </button>
     @if (NodeType.AttackerTypes.includes(this.node().type)) {
         <button
             routerLink="attack"
-            class="inline-flex flex-1 items-center justify-center gap-1 whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-            routerLinkActive="bg-background text-foreground shadow-sm">
+            class="ring-offset-background focus-visible:ring-ring inline-flex flex-1 items-center justify-center gap-1 rounded-sm px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden"
+            routerLinkActive="bg-background text-foreground shadow-xs">
             <ng-icon name="lucideGhost" size="1rem" />
             {{ "PHANTOM_ATTACKER" | translate }}
         </button>
     }
     <button
         routerLink="configuration"
-        class="inline-flex flex-1 items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-        routerLinkActive="bg-background text-foreground shadow-sm">
+        class="ring-offset-background focus-visible:ring-ring inline-flex flex-1 items-center justify-center rounded-sm px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden"
+        routerLinkActive="bg-background text-foreground shadow-xs">
         {{ "CONFIGURATION" | translate }}
     </button>
 </div>
 <div
     hlmCardContent
     [@fadeAnimation]="getAnimationData(outlet)"
-    class="overflow-scroll">
+    class="overflow-hidden">
     <router-outlet #outlet="outlet" />
 </div>

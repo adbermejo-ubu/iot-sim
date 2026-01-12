@@ -1,20 +1,14 @@
-import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
-import { hlm } from '@spartan-ng/helm/utils';
-import type { ClassValue } from 'clsx';
+import { Directive } from "@angular/core";
+import { classes } from "@spartan-ng/helm/utils";
 
-@Component({
-	selector: 'hlm-dialog-footer',
-	template: `
-		<ng-content />
-	`,
-	host: {
-		'[class]': '_computedClass()',
-	},
-	changeDetection: ChangeDetectionStrategy.OnPush,
+@Directive({
+    selector: "[hlmDialogFooter],hlm-dialog-footer",
+    host: {
+        "data-slot": "dialog-footer",
+    },
 })
 export class HlmDialogFooter {
-	public readonly userClass = input<ClassValue>('', { alias: 'class' });
-	protected readonly _computedClass = computed(() =>
-		hlm('flex flex-col-reverse gap-2 sm:flex-row sm:justify-end', this.userClass()),
-	);
+    constructor() {
+        classes(() => "flex flex-col-reverse gap-2 sm:flex-row sm:justify-end");
+    }
 }

@@ -1,9 +1,9 @@
 import { CommonModule } from "@angular/common";
 import { Component, inject, input, InputSignal } from "@angular/core";
-import { HlmDialogService } from "@spartan-ng/helm/dialog";
 import { Connection, ConnectionStatus } from "@models/connection";
 import { Position } from "@models/position";
 import { EditConnectionDialogComponent } from "@routes/dialogs/edit-connection-dialog.component";
+import { HlmDialogService } from "@spartan-ng/helm/dialog";
 
 @Component({
     selector: "app-connection",

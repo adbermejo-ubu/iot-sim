@@ -4,14 +4,16 @@
         <brn-select
             [(ngModel)]="attack"
             [placeholder]="'SELECT_ATTACK' | translate"
-            class="mt-2! inline-block w-full">
+            scrollable="true"
+            class="inline-block w-full">
             <hlm-select-trigger class="w-full">
                 <hlm-select-value class="block" />
             </hlm-select-trigger>
-            <hlm-select-content>
+            <hlm-select-content class="max-h-96">
+                <hlm-select-scroll-up />
                 @for (item of attacks; track $index) {
                     @if (item === "---") {
-                        <hlm-menu-separator />
+                        <hlm-dropdown-menu-separator />
                     } @else {
                         <hlm-option [value]="item">{{ item.name }}</hlm-option>
                     }
@@ -20,6 +22,7 @@
                         {{ "NO_ATTACKS" | translate }}
                     </hlm-option>
                 }
+                <hlm-select-scroll-down />
             </hlm-select-content>
         </brn-select>
     </label>
@@ -31,14 +34,17 @@
                 (multipleTargets() ? 'TARGETS_IP' : 'TARGET_IP') | translate
             "
             [multiple]="multipleTargets()"
-            class="mt-2! inline-block w-full">
+            scrollable="true"
+            class="inline-block w-full">
             <hlm-select-trigger class="w-full">
                 <hlm-select-value class="block" />
             </hlm-select-trigger>
-            <hlm-select-content>
+            <hlm-select-content class="max-h-96">
+                <hlm-select-scroll-up />
                 @for (item of connectedNodes; track $index) {
                     <hlm-option [value]="item.ip">{{ item.ip }}</hlm-option>
                 }
+                <hlm-select-scroll-down />
             </hlm-select-content>
         </brn-select>
     </label>
@@ -49,8 +55,8 @@
     <ng-icon
         name="lucideUnplug"
         size="6rem"
-        class="mb-8 mt-4 self-center text-secondary" />
-    <p class="w-96 self-center text-center text-sm text-muted-foreground">
+        class="text-secondary! mt-4 mb-8 self-center" />
+    <p class="text-muted-foreground w-96 self-center text-center text-sm">
         {{ "ATTACKER_NOT_CONNECTED" | translate }}
     </p>
 }

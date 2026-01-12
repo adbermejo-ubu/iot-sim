@@ -8,15 +8,15 @@ import {
     Signal,
 } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { NodeType } from "@models/node";
+import { TranslateModule } from "@ngx-translate/core";
+import { BrnDialogRef, injectBrnDialogContext } from "@spartan-ng/brain/dialog";
+import { BrnSelectImports } from "@spartan-ng/brain/select";
 import { HlmButtonImports } from "@spartan-ng/helm/button";
 import { HlmDialogImports } from "@spartan-ng/helm/dialog";
 import { HlmInputImports } from "@spartan-ng/helm/input";
 import { HlmLabelImports } from "@spartan-ng/helm/label";
 import { HlmSelectImports } from "@spartan-ng/helm/select";
-import { NodeType } from "@models/node";
-import { TranslateModule } from "@ngx-translate/core";
-import { BrnDialogRef, injectBrnDialogContext } from "@spartan-ng/brain/dialog";
-import { BrnSelectImports } from "@spartan-ng/brain/select";
 
 export interface AddNodeDialogContext {
     name: string;

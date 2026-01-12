@@ -1,15 +1,15 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { Connection } from "@models/connection";
+import { TranslateModule } from "@ngx-translate/core";
+import { injectBrnDialogContext } from "@spartan-ng/brain/dialog";
+import { BrnSelectImports } from "@spartan-ng/brain/select";
 import { HlmDialogImports } from "@spartan-ng/helm/dialog";
 import { HlmInputImports } from "@spartan-ng/helm/input";
 import { HlmLabelImports } from "@spartan-ng/helm/label";
 import { HlmSelectImports } from "@spartan-ng/helm/select";
 import { HlmSwitchImports } from "@spartan-ng/helm/switch";
-import { Connection } from "@models/connection";
-import { TranslateModule } from "@ngx-translate/core";
-import { injectBrnDialogContext } from "@spartan-ng/brain/dialog";
-import { BrnSelectImports } from "@spartan-ng/brain/select";
 
 export interface EditConnectionContext {
     connection: Connection;

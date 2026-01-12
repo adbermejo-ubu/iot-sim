@@ -1,1 +1,1 @@
-export * from './hlm-avatar-fallback';
+export * from "./hlm-avatar-fallback";

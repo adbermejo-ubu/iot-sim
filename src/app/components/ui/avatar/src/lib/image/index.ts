@@ -1,1 +1,1 @@
-export * from './hlm-avatar-image';
+export * from "./hlm-avatar-image";

@@ -12,13 +12,13 @@ export const floatAnimation = trigger("floatAnimation", [
             ":enter",
             [
                 style({
-                    transform: "translateX(100%) translateY(-50%)",
+                    transform: "translateX(100%)",
                     opacity: 0,
                 }),
                 animate(
                     "0.5s ease-in-out",
                     style({
-                        transform: "translateX(0) translateY(-50%)",
+                        transform: "translateX(0)",
                         opacity: 1,
                     }),
                 ),
@@ -31,13 +31,13 @@ export const floatAnimation = trigger("floatAnimation", [
             ":leave",
             [
                 style({
-                    transform: "translateX(0) translateY(-50%)",
+                    transform: "translateX(0)",
                     opacity: 1,
                 }),
                 animate(
                     "0.5s ease-in-out",
                     style({
-                        transform: "translateX(100%) translateY(-50%)",
+                        transform: "translateX(100%)",
                         opacity: 0,
                     }),
                 ),
